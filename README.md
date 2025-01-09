@@ -59,13 +59,13 @@ npm run build
 
 **Scripts**
 
-    ```bash
+   ```bash
     npm run start
-    ```
-        Starts the development server.
-    ```bash
+```
+: Starts the development server.
+```bash
     npm run build
-    ```
+  ```
         Creates a production build in the dist folder.
 
 ```bash
