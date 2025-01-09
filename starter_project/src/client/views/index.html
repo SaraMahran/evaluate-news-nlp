@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Evaluate news articles with Natural Language Processing (NLP)."
+    />
+    <meta charset="utf-8" />
+    <title>Evaluate News NLP</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="logo">Logo</div>
+      <nav class="navigation">
+        <!-- Navigation items can go here -->
+      </nav>
+    </header>
+
+    <main>
+      <section>
+        <form id="urlForm">
+          <input
+            id="name"
+            type="text"
+            name="url"
+            placeholder="Enter URL"
+            required
+          />
+          <button id="submitButton" type="submit">Submit</button>
+        </form>
+      </section>
+
+      <section>
+        <strong>Form Results:</strong>
+        <div id="results"></div>
+      </section>
+    </main>
+
+    <footer>
+      <p>This is a footer</p>
+    </footer>
+
+    <script src="js/bundle.js"></script>
+
+    <script>
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", function () {
+          navigator.serviceWorker.register("/service-worker.js").then(
+            function (registration) {
+              console.log(
+                "ServiceWorker registration successful with scope: ",
+                registration.scope
+              );
+            },
+            function (err) {
+              console.log("ServiceWorker registration failed: ", err);
+            }
+          );
+        });
+      }
+    </script>
+  </body>
+</html>
