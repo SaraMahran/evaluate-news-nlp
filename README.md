@@ -66,10 +66,10 @@ npm run build
 ```bash
     npm run build
   ```
-        Creates a production build in the dist folder.
+: Creates a production build in the dist folder.
 
 ```bash
  npm run test
 ```
 
-      Runs unit tests with Jest.
+  : Runs unit tests with Jest.
