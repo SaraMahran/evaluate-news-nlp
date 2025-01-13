@@ -3,7 +3,13 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 module.exports = {
-  entry: path.resolve(__dirname, "src", "client", "index.js"),
+  entry: path.resolve(
+    __dirname,
+    "starter-project",
+    "src",
+    "client",
+    "index.js"
+  ),
 
   mode: "development",
   devtool: "source-map",
@@ -31,14 +37,20 @@ module.exports = {
 
   plugins: [
     new CleanWebpackPlugin({
-      dry: false,
+      dry: true,
       verbose: true,
-      cleanStaleWebpackAssets: true,
-      protectWebpackAssets: false,
+      cleanStaleWebpackAssets: false,
     }),
 
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, "src", "client", "views", "index.html"),
+      template: path.resolve(
+        __dirname,
+        "starter-project",
+        "src",
+        "client",
+        "views",
+        "index.html"
+      ),
       filename: "index.html",
       inject: "body",
     }),
@@ -47,7 +59,6 @@ module.exports = {
   devServer: {
     port: 3000,
     allowedHosts: "all",
-    contentBase: path.resolve(__dirname, "dist"),
     hot: true,
     open: true,
   },

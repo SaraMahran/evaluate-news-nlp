@@ -4,16 +4,21 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const WorkboxPlugin = require("workbox-webpack-plugin");
 
 module.exports = {
-  entry: path.resolve(__dirname, "src", "js", "index.js"),
+  entry: path.resolve(
+    __dirname,
+    "starter-project",
+    "src",
+    "client",
+    "index.js"
+  ),
 
   mode: "production",
   devtool: "source-map",
   stats: "verbose",
 
   output: {
-    path: path.resolve(__dirname, "dist"),
-    filename: "bundle.[contenthash].js",
-    publicPath: "/",
+    path: path.resolve(__dirname, "dist"), // Change to 'starter-project/dist' if needed
+    filename: "bundle.js",
   },
 
   module: {
@@ -39,7 +44,14 @@ module.exports = {
     }),
 
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, "src", "views", "index.html"),
+      template: path.resolve(
+        __dirname,
+        "starter-project",
+        "src",
+        "client",
+        "views",
+        "index.html"
+      ),
       filename: "index.html",
       inject: "body",
       minify: {
@@ -83,7 +95,10 @@ module.exports = {
   ],
 
   resolve: {
-    extensions: [".js", ".json", ".wasm"],
+    extensions: [".js", ".json", ".html"],
+    alias: {
+      "@": path.resolve(__dirname, "starter-project", "src"),
+    },
   },
 
   optimization: {
